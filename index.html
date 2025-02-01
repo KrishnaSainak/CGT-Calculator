@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tax Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+  <div class = "container bg-light">
+    <div class = "d-flex flex-row justify-content-center">
+    <div class ="Calculator-container bg-info p-2 rounded">
+        <div class = "intro-card m-3">
+            <h1 class = "text-light font-weight-bolder">Capital Gain Tax Calculator</h1>
+            <select name ="asset" id = "asset">
+                <label for = "asset"> Select type Of asset</label>
+                <option value="house">House/flat/Site</option>
+                <option value="non-house">Agricultre Land</option>
+                <option value="other">Shares and other assets</option>
+            </select>
+        </div>
+        <div>
+        <div class = "cost-container">
+        <label class = "text-light font-weight-bolder label-title" for ="dateFixer,costPrize">Purchase Prize / Cost Purchase (including stamps/brokerage) with Date of Purchase<span class="text-danger">**</span> </label>
+        <div class ="d-flex flex-column">
+            <input type = "date" id ="dateFixer" class="m-1" />
+            <input type = "number" id ="costPrize" class="m-1 cost-prize-input" placeholder = "Enter the Purchase Cost" />
+            <p class = "index-text" id = "indexValue"></p>
+        </div>
+    </div>
+    <div class = "sold-container">
+        <label class = " text-light font-weight-bolder label-title" for ="soldDate,soldPrize">Sale Prize / Sold Purchase (including stamps/brokerage)with Date of Sold<span class="text-danger">**</span> </label>
+        <div class ="d-flex flex-column">
+            <input type = "date" id ="soldDate" class="m-1" />
+            <input type = "number" id ="soldPrize" class="m-1 cost-prize-input" placeholder="Enter Sold Cost"/>
+        </div>
+        <div class = "stamp-value">
+            <label for="stampValue" class = "text-light font-weight-bold">Stamp-Value<span class = "text-danger">**</span></label>
+            <input type="number" id = "stampValue" placeholder = "Enter Stamp Value"/>
+        </div>
+        <div class = "stamp-value">
+            <label for="brokerValue" class = "text-light font-weight-bold">Broker Fee/ Expensese for Transfer<span class = "text-danger">**</span></label>
+            <input type="number" id = "brokerValue"/>
+        </div>
+        </div>
+        <div class ="construction-cotnainer">
+        <label class = "construction text-light font-weight-bold" for = "costConstruction"> Cost of Construction with date(if any) not enter 0 <span class="text-danger">**</span></label>
+        <input type="date" id="constructionDate" class = "m-1"/>
+        <input type="number" id = "costConstruction" class="m-1" placeholder = "Enter the cost of construction"/>
+        </div>
+        <div class ="improvement-cotnainer">
+            <label class = "improvement text-light font-weight-bold" for = "costConstruction"> Cost of Improvement with date(if any) not enter 0 <span class="text-danger">**</span></label>
+            <input type="date" id="improvementDate" class = "m-1"/>
+            <input type="number" id = "costImprovement" class="m-1" placeholder="Enter the Improvement Cost"/>
+        </div>
+        <div>
+            <label class = "investement text-light font-weight-bold" for ="investment">Investment in the asset u/s (SEC 54/54F 54EC) <span class="text-danger">**</span></label>
+            <input type="number" id = "investment" class="m-1" placeholder="Enter the Investment cost"/>
+        </div>
+        <div>
+            <label class = "property-capital text-light font-weight-bold">Property/Asset Sold in india?<span class = "text-danger">**</span></label>
+            <select name = "property-capital" id = "property-capital">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+        <button type="submit" class = " btn btn-primary m-3">Calculate</button>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+<script src="script.js"></script>
+</body>
+</html>
